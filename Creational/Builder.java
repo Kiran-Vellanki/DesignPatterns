@@ -137,7 +137,7 @@ class MediumPizza extends Pizza {
 
     @Override
     public float price() {
-        return 60f;
+        return 260f;
     }
 
 }
@@ -167,10 +167,10 @@ class OrderItems {
 public class Builder {
     public static void main(String[] args) {
         OrderItems items = new OrderItems();
-        Items item = new MediumPizza();
-        Items item2 = new SmallCoke();
-        items.addItem(item);
-        items.addItem(item2);
+        items.addItem(new MediumPizza());
+        items.addItem(new SmallCoke());
+        items.addItem(new MediumPizza());
+        items.getName();
         System.out.println(items.getCost());
     }
 }

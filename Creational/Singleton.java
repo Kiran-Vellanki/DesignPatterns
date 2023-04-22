@@ -18,7 +18,7 @@ public class Singleton {
 
     public static void main(String[] args) {
         System.out.println(singleton);
-        singleton.getInstance();
+        getInstance();
         System.out.println(singleton);
         System.gc();
     }
