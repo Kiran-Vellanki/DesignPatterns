@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-interface Item {
+interface Items {
     String name();
 
     String size();
@@ -8,13 +8,13 @@ interface Item {
     float price();
 }
 
-abstract class Pizza implements Item {
+abstract class Pizza implements Items {
     @Override
     public abstract float price();
 
 }
 
-abstract class ColdDrink implements Item {
+abstract class ColdDrink implements Items {
     @Override
     public abstract float price();
 }
@@ -143,22 +143,22 @@ class MediumPizza extends Pizza {
 }
 
 class OrderItems {
-    ArrayList<Item> item = new ArrayList<>();
+    ArrayList<Items> item = new ArrayList<>();
 
-    public void addItem(Item i) {
+    public void addItem(Items i) {
         item.add(i);
     }
 
     public float getCost() {
         float cost = 0;
-        for (Item item2 : item) {
+        for (Items item2 : item) {
             cost += item2.price();
         }
         return cost;
     }
 
     public void getName() {
-        for (Item item2 : item) {
+        for (Items item2 : item) {
             System.out.println(item2.name());
         }
     }
@@ -167,8 +167,8 @@ class OrderItems {
 public class Builder {
     public static void main(String[] args) {
         OrderItems items = new OrderItems();
-        Item item = new MediumPizza();
-        Item item2 = new SmallCoke();
+        Items item = new MediumPizza();
+        Items item2 = new SmallCoke();
         items.addItem(item);
         items.addItem(item2);
         System.out.println(items.getCost());
