@@ -1,7 +1,5 @@
 package Behavioral;
 
-import javax.xml.catalog.CatalogFeatures.Feature;
-
 interface InterpreterPattern {
     public abstract String convert(String string);
 }
